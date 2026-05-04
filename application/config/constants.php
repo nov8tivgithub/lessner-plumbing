@@ -19,8 +19,16 @@ define('FOPEN_READ_WRITE_CREATE',				'a+b');
 define('FOPEN_WRITE_CREATE_STRICT',				'xb');
 define('FOPEN_READ_WRITE_CREATE_STRICT',		'x+b');
 
-define('GOOGLESITEKEY','6Le0_0kUAAAAANbl3sY-AygdC5VVARu5lDVYEMTK');
-define('GOOGLESECRETKEY','6Le0_0kUAAAAAHADXEMBNNGFtVwoiz1Cprer5_rV');
+if (IS_LIVE) {
+	// Production keys — registered to lessnerplumbing.com
+	define('GOOGLESITEKEY','6Le0_0kUAAAAANbl3sY-AygdC5VVARu5lDVYEMTK');
+	define('GOOGLESECRETKEY','6Le0_0kUAAAAAHADXEMBNNGFtVwoiz1Cprer5_rV');
+} else {
+	// Google's public reCAPTCHA test keys — work on any domain (incl. localhost) and always verify successfully.
+	// See https://developers.google.com/recaptcha/docs/faq
+	define('GOOGLESITEKEY','6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI');
+	define('GOOGLESECRETKEY','6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe');
+}
 
 define('PWD','lppwd');
 if (IS_LIVE) {
