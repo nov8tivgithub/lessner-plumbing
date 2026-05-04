@@ -93,7 +93,7 @@
 				
 				<p>
                     <a class="rlink" onClick="document.getElementById('captcha').src = '<?php echo base_url();?>assets/securimage/securimage_show.php?' + Math.random(); return false" style="padding-right:4px;">Reset</a>|
-                   <a class="rlink opnS1" id="hlptxt" style="position:relative;">Help
+                   <a class="rlink opnS1" id="hlptxt" style="position:relative;">HelpX
                     <span class="caphelp">Please enter the text you see in the  same order.
                        Doing so helps prevent automated programs from abusing this form.</span>
                    </a>
