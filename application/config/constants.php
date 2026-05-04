@@ -1,5 +1,10 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
+// TRUE when the request is served on the live domain (lessnerplumbing.com or any subdomain).
+// FALSE on localhost, staging, or when running from CLI — drives credential selection in
+// database.php, email.php, and the TOMAIL routing below.
+define('IS_LIVE', isset($_SERVER['HTTP_HOST']) && preg_match('/(^|\.)lessnerplumbing\.com$/i', $_SERVER['HTTP_HOST']));
+
 define('FILE_READ_MODE', 0644);
 define('FILE_WRITE_MODE', 0666);
 define('DIR_READ_MODE', 0755);
@@ -18,7 +23,11 @@ define('GOOGLESITEKEY','6Le0_0kUAAAAANbl3sY-AygdC5VVARu5lDVYEMTK');
 define('GOOGLESECRETKEY','6Le0_0kUAAAAAHADXEMBNNGFtVwoiz1Cprer5_rV');
 
 define('PWD','lppwd');
-define('ADMINEMAIL','admin@lessnerplumbing.com');
+if (IS_LIVE) {
+	define('ADMINEMAIL','admin@lessnerplumbing.com');
+} else {
+	define('ADMINEMAIL','test@icwares.com');
+}
 //define('TOMAIL','admin@lessnerplumbing.com');
 if( $_SERVER['REMOTE_ADDR'] == '59.90.28.106' ){ 
 	define('TOMAIL','test@icwares.com');
