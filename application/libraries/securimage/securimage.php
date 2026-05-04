@@ -514,8 +514,9 @@ class Securimage extends CI_Model{
      * </code>
      *
      */
-    public function Securimage()
+    public function __construct()
     {
+        parent::__construct();
         // Initialize session or attach to existing
         if ( session_id() == '' ) { // no session has been started yet, which is needed for validation
             if (trim($this->session_name) != '') {
@@ -1564,8 +1565,9 @@ class Securimage_Color extends CI_Model{
      * @param $green Green component 0-255
      * @param $blue Blue component 0-255
      */
-   public function Securimage_Color($red, $green = null, $blue = null)
+   public function __construct($red = 0, $green = null, $blue = null)
     {
+        parent::__construct();
         if ($green == null && $blue == null && preg_match('/^#[a-f0-9]{3,6}$/i', $red)) {
             $col = substr($red, 1);
             if (strlen($col) == 3) {
