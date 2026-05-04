@@ -1,0 +1,58 @@
+@charset "utf-8";
+/* CSS Document */
+
+@font-face {
+    font-family: 'Chalkboard';
+    src: url('../fonts/chalkboard/Chalkboard.eot');
+    src: url('../fonts/chalkboard/Chalkboard.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/chalkboard/Chalkboard.woff') format('woff'),
+         url('../fonts/chalkboard/Chalkboard.ttf') format('truetype'),
+         url('../fonts/chalkboard/Chalkboard.svg#diavlobook') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Chalkboard-Bold';
+    src: url('../fonts/chalkboard/Chalkboard-Bold.eot');
+	src:url('../fonts/chalkboard/Chalkboard-Bold.eot')
+    src: url('../fonts/chalkboard/Chalkboard-Bold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/chalkboard/Chalkboard-Bold.woff') format('woff'),
+         url('../fonts/chalkboard/Chalkboard-Bold.ttf') format('truetype'),
+         url('../fonts/chalkboard/Chalkboard-Bold.svg#diavlolight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+@font-face {
+    font-family: 'PTSans-Regular';
+    src: url('../fonts/PTSans/PTSans-Regular.eot');
+    src: url('../fonts/PTSans/PTSans-Regular.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/PTSans/PTSans-Regular.woff') format('woff'),
+         url('../fonts/PTSans/PTSans-Regular.ttf') format('truetype'),
+         url('../fonts/PTSans/PTSans-Regular.svg#helvetica_inserat_lt_stdRg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'PTSans-Italic';
+    src: url('../fonts/PTSans/PTSans-Italic.eot');
+    src: url('../fonts/PTSans/PTSans-Italic.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/PTSans/PTSans-Italic.woff') format('woff'),
+         url('../fonts/PTSans/PTSans-Italic.ttf') format('truetype'),
+         url('../fonts/PTSans/PTSans-Italic.svg#helvetica_lt_stdlight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SMARTKD';
+    src: url('../fonts/smartkid/SMARTKD.eot');
+    src: url('../fonts/smartkid/SMARTKD.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/smartkid/SMARTKD.woff') format('woff'),
+         url('../fonts/smartkid/SMARTKD.ttf') format('truetype'),
+         url('../fonts/smartkid/SMARTKD.svg#helvetica_lt_stdlight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
