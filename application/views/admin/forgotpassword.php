@@ -83,7 +83,7 @@
                 <div class="chdac">
                     <span id="recaptcha_image" class="cappic"><img id="captcha" src="<?php echo base_url();?>assets/securimage/securimage_show.php?sid=<?php echo md5(time()) ?>" alt="CAPTCHA Image" width="220" height="43" /> </span> 
 					
-						 <p class="capcht">Please enter the text in the same order as shown in the Image above.XX </p>
+						 <p class="capcht">Please enter the text in the same order as shown in the Image above.</p>
 						 
 					<div class="clear"></div>
 					</div>
