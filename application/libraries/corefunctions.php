@@ -384,7 +384,7 @@
           curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true );
           $response = curl_exec( $ch );
           if ( $response ) {
-              $data       = strstr( $response, '<?' );
+              $data       = strstr( $response, '<?php ' );
               // echo '<!-- '. $data. ' -->'; // Uncomment to show XML in comments
               $xml_parser = xml_parser_create();
               xml_parse_into_struct( $xml_parser, $data, $vals, $index );
@@ -470,7 +470,7 @@
           curl_setopt( $ch, CURLOPT_HTTPGET, true );
           curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true );
           $response   = curl_exec( $ch );
-          $data       = strstr( $response, '<?' );
+          $data       = strstr( $response, '<?php ' );
           // echo '<!-- '. $data. ' -->'; // Uncomment to show XML in comments
           $xml_parser = xml_parser_create();
           xml_parse_into_struct( $xml_parser, $data, $vals, $index );

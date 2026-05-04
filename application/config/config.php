@@ -1,8 +1,9 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-$config['base_url']	= 'https://'.$_SERVER['HTTP_HOST'].'';// to set up base url
+$protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
+$config['base_url'] = $protocol.'://'.$_SERVER['HTTP_HOST'].rtrim(str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME'])), '/').'/';// to set up base url
 
-$config['index_page'] = 'index.php';
+$config['index_page'] = '';
 
 $config['uri_protocol']	= 'AUTO';
 

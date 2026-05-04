@@ -27,7 +27,7 @@
 				 email: {
                     required: true,
                     email: true,
-                    remote: "<? echo base_url().'admin/admin/checkeligible'; ?>"
+                    remote: "<?php  echo base_url().'admin/admin/checkeligible'; ?>"
                 },			
 				
 				captcha_code:'required'
@@ -105,7 +105,7 @@
                 <input type="submit" class="btn btn-default btn-lg btn-block cus-log-in" value="Recover" />
                 </div>
                 <div class="row align-center forgotfix">
-                <a href="<? echo base_url().ADMIN; ?>">Back to Login</a></div>
+                <a href="<?php  echo base_url().ADMIN; ?>">Back to Login</a></div>
             </div>
             
             

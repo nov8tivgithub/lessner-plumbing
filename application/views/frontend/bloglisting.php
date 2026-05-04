@@ -19,7 +19,7 @@ function getBlogs(select){
 		catid = "";
 	 }
 	 //alert(catid);
-	 var lin = '<? echo base_url(); ?>';
+	 var lin = '<?php  echo base_url(); ?>';
 	 var relink = lin+'blog/'+year+'-'+month+'/'+catid
 	 window.location.href = relink;
 }
@@ -31,7 +31,7 @@ function getcatBlogs(){
 	 if(cat == ""){
 	 	window.location.href = '<?php echo base_url('blog'); ?>';
 	 }else{
-		 var lin = '<? echo base_url(); ?>';
+		 var lin = '<?php  echo base_url(); ?>';
 		 var relink = lin+'blog/'+year+'-'+month+'/'+cat
 		 window.location.href = relink;
 	 }
@@ -42,10 +42,10 @@ var cls = $("#blogclass").val().split('-');
 var elem = $("#loadmr").html();
 //alert(elem);
 $("#loadmr").html('<img src="<?php echo base_url('images/lespre.gif'); ?>">');
- $.post('<? echo base_url('frontend/frontend/loadmoreblogs') ?>',{
+ $.post('<?php  echo base_url('frontend/frontend/loadmoreblogs') ?>',{
  
-	   monthyear : '<? echo $monthyear; ?>',
-	   tagid     : '<? echo $tagid; ?>',
+	   monthyear : '<?php  echo $monthyear; ?>',
+	   tagid     : '<?php  echo $tagid; ?>',
 	   lastid    : $("#lastid").val(),
 	   lastkey : cls[0],
 	   count : cls[1],
@@ -71,100 +71,100 @@ $("#loadmr").html('<img src="<?php echo base_url('images/lespre.gif'); ?>">');
     	<div class="w970 abt_box text-center">
             <h3 class="greshblu MB10 fadeInRight wow">Blogs</h3>
             <div class="archive">
-			<? if(!empty($categ)): ?>
+			<?php  if(!empty($categ)): ?>
             	<div class="category">
                 	<p class="panda">Categories</p>
                     <div class="selctbx sel325">
                     	<select name="categs" onchange="getcatBlogs()" id="categs">
                         	<option value="">--ALL--</option>
-							<? if(!empty($categ)): 							
+							<?php  if(!empty($categ)): 							
 							foreach($categ as $mn):							
 							?>
-							<option value="<? echo $mn['tagid']; ?>" <? if($tagid == $mn['tagid']): ?> selected="selected" <? endif; ?>> <? echo $mn['tagname']; ?> </option> 
-                            <? 
+							<option value="<?php  echo $mn['tagid']; ?>" <?php  if($tagid == $mn['tagid']): ?> selected="selected" <?php  endif; ?>> <?php  echo $mn['tagname']; ?> </option> 
+                            <?php  
 							endforeach;
 							endif;
 							?>
 						</select>
                     </div>
                 </div>
-                <? 
+                <?php  
 				endif;
 				?>	
 
 				
-			<? $ymArray = explode('-',$monthyear); ?>
-			<? if(!empty($blogsforDate)) : ?>
+			<?php  $ymArray = explode('-',$monthyear); ?>
+			<?php  if(!empty($blogsforDate)) : ?>
                
 			   <div class="right_cate">
                 	<p class="panda">Archives</p>
 				 <div class="selctbx sel100">
 					<select name="year" onchange="getBlogs('year')" id="year"> 
 								<option value="all">--Year--</option>								
-									<? if(!empty($blogsforDate)):
+									<?php  if(!empty($blogsforDate)):
 										foreach($blogsforDate as $bd):
 											$yearArray[] = date('Y',$bd['createdate']);
 										endforeach;
 											$yearArray =  array_unique($yearArray);
 										foreach($yearArray as $v):
 										?>
-							<option value="<? echo $v; ?>" <? if($v == $year): ?> selected="selected" <? endif; ?>> <? echo $v; ?> </option> 
-							<? 
+							<option value="<?php  echo $v; ?>" <?php  if($v == $year): ?> selected="selected" <?php  endif; ?>> <?php  echo $v; ?> </option> 
+							<?php  
 							endforeach;
 						endif;
 					 ?>
 				</select>		
              </div>
 			  
-			  		<? if( $year !== "all" ):  ?>	 
+			  		<?php  if( $year !== "all" ):  ?>	 
                     <div class="selctbx sel195" id="months" >
                     	<select name="month" onchange="getBlogs('month')" id="month">
                         	<option value="all">--Month--</option>
-							      <? if(!empty($blogsformonth)):					
+							      <?php  if(!empty($blogsformonth)):					
 									foreach($blogsformonth as $b):
 										$months[] = date('m',$b['createdate']);
 									endforeach;
 										$months = array_unique($months);
 									foreach($months as $ad):
 									?>
-								<option value="<? echo $ad; ?>" <? if($ad == $month): ?> selected="selected" <? endif; ?>> <? $monthName = date('F', mktime(0, 0, 0, $ad, 10)); echo $monthName; ?> </option> 
-							<? 
+								<option value="<?php  echo $ad; ?>" <?php  if($ad == $month): ?> selected="selected" <?php  endif; ?>> <?php  $monthName = date('F', mktime(0, 0, 0, $ad, 10)); echo $monthName; ?> </option> 
+							<?php  
 			 		endforeach;
 				endif;
 			 ?>
                         </select>
                     </div>
-					<? endif; ?>
+					<?php  endif; ?>
 					
                 </div>
-				<? endif; ?>
+				<?php  endif; ?>
             <div class="clear"></div>
             </div>
             <div class="blog_section">
 			
-				<? if(!empty($blogdata)): 
+				<?php  if(!empty($blogdata)): 
 				
 				
 				foreach($blogdata as $cv=>$cn):
 					
 				?>
 			
-                <div class="<?echo $cn['class']; ?> fadeInLeft wow ">
-                    <a class="vie_more" href="<? echo base_url('blogdetails/blog/'.$cn['postkey']); ?>"></a>
+                <div class="<?php echo $cn['class']; ?> fadeInLeft wow ">
+                    <a class="vie_more" href="<?php  echo base_url('blogdetails/blog/'.$cn['postkey']); ?>"></a>
                     <div class="blog_img">
-                        <img src="<? echo $cn['image'];?>" alt="blog image" />
+                        <img src="<?php  echo $cn['image'];?>" alt="blog image" />
                     </div>
                     <div class="blog_txt">
-                       <a href="<? echo base_url('blogdetails/blog/'.$cn['postkey']); ?>"> <h4 class="blog_tytl"><? echo strlen(strip_tags($cn['title']))> $cn['truncate'] ? substr(strip_tags($cn['title']),0,$cn['truncate'])."..." : strip_tags($cn['title']);?></h4> </a> 
+                       <a href="<?php  echo base_url('blogdetails/blog/'.$cn['postkey']); ?>"> <h4 class="blog_tytl"><?php  echo strlen(strip_tags($cn['title']))> $cn['truncate'] ? substr(strip_tags($cn['title']),0,$cn['truncate'])."..." : strip_tags($cn['title']);?></h4> </a> 
                         <p class="blog_para"><?php  echo  substr(strip_tags($cn['description']),0,$cn['para'])."..."?> </p>
-                        <p class="text-right"><?echo date("M", $cn['createdate'])." ";  echo date("d", $cn['createdate']).","." ";  echo date("Y", $cn['createdate']); ?></p>
+                        <p class="text-right"><?php echo date("M", $cn['createdate'])." ";  echo date("d", $cn['createdate']).","." ";  echo date("Y", $cn['createdate']); ?></p>
                     </div>
                     <div class="share_box">
-                        <a class="st_sharethis_custom share_away" st_url="<? echo base_url('blogdetails/'.$cn['postkey']); ?>" st_image="<? echo $cn['image'];?>" st_title="<? echo $cn['title']; ?>">Share</a>
+                        <a class="st_sharethis_custom share_away" st_url="<?php  echo base_url('blogdetails/'.$cn['postkey']); ?>" st_image="<?php  echo $cn['image'];?>" st_title="<?php  echo $cn['title']; ?>">Share</a>
                     </div>
                 </div>     				
            
-					<?
+					<?php 
 			endforeach;
 			endif;
 		?>
@@ -174,17 +174,17 @@ $("#loadmr").html('<img src="<?php echo base_url('images/lespre.gif'); ?>">');
 			 <div class="clear"></div>
             </div>
 			
-			<input type="hidden" name="lastid" value="<? echo $lastid; ?>" id="lastid">
+			<input type="hidden" name="lastid" value="<?php  echo $lastid; ?>" id="lastid">
 			
-			<? if(empty($blogdata)): ?>		
+			<?php  if(empty($blogdata)): ?>		
                 	<p class="norecords">No Records Found</p>
-			<? endif; ?>
+			<?php  endif; ?>
 					
-			<? if($showLoadmore == 'Yes'): ?>
+			<?php  if($showLoadmore == 'Yes'): ?>
 				<div class="pd10" id="loadmr" >			
                 	<a href="javascript:void(0)" onclick="loadmore()" class="lp_lnk_btn fadeInRight wow">Load More Blogs</a>
 				</div>
-			<? endif; ?>
+			<?php  endif; ?>
 			
         <div class="clear"></div>
         </div>

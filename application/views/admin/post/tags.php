@@ -1,6 +1,6 @@
-<link rel="stylesheet" media="screen" type="text/css" href="<? echo base_url(); ?>styles/colorbox.css" />  
-<script src="<? echo base_url('scripts/ckeditor/ckeditor.js'); ?>"></script>
-<script src="<? echo base_url('scripts/jquery.colorbox.js'); ?>"></script>
+<link rel="stylesheet" media="screen" type="text/css" href="<?php  echo base_url(); ?>styles/colorbox.css" />  
+<script src="<?php  echo base_url('scripts/ckeditor/ckeditor.js'); ?>"></script>
+<script src="<?php  echo base_url('scripts/jquery.colorbox.js'); ?>"></script>
 
 <script language="javascript">
   $(document).ready(function () {
@@ -36,7 +36,7 @@
   
   function statchange(tagkey,status){
     if(confirm('Are you sure you want to '+status+' this tag ?')){
-	   $.post('<? echo base_url().ADMIN."/changetagstatus" ?>',{
+	   $.post('<?php  echo base_url().ADMIN."/changetagstatus" ?>',{
 				   tagkey : tagkey,				
 				   act : 'statchange',
 				   status : status
@@ -122,7 +122,7 @@
 	if(!empty($tags)):    
 		foreach($tags as $new):
 	?>
-	       <div class="row bordertop listvw" id="key_<? echo $new['tagkey']; ?>">
+	       <div class="row bordertop listvw" id="key_<?php  echo $new['tagkey']; ?>">
 		 		
 		 
            
@@ -136,9 +136,9 @@
 			<div class="col-sm-4 pad-top ">
                 <div class="btn-group">
 					 <?php if($new['status'] == '0')  : ?>
-                    <a class="btn btn-default btn-sm" onclick="statchange('<? echo $new['tagkey']; ?>','Activate')"><span class="glyphicon glyphicon-ok"></span> Activate</a><?php endif; ?>
+                    <a class="btn btn-default btn-sm" onclick="statchange('<?php  echo $new['tagkey']; ?>','Activate')"><span class="glyphicon glyphicon-ok"></span> Activate</a><?php endif; ?>
                      <?php if($new['status'] == '1' ) : ?>
-                    <a  class="btn btn-default btn-sm" onclick="statchange('<? echo $new['tagkey']; ?>','Deactivate')"><span class="glyphicon glyphicon-trash"></span> Deactivate</a> <?php endif; ?>
+                    <a  class="btn btn-default btn-sm" onclick="statchange('<?php  echo $new['tagkey']; ?>','Deactivate')"><span class="glyphicon glyphicon-trash"></span> Deactivate</a> <?php endif; ?>
                     <a class="btn btn-default btn-sm" href="<?php echo base_url().ADMIN.'/editcategory/'.$new['tagkey'];?>"><span class="glyphicon glyphicon-pencil"></span> Edit</a>
                  </div>
 			</div>
@@ -147,7 +147,7 @@
 		  
 	       </div>
 	
- <?
+ <?php 
 		endforeach;
 		else:
 			?>

@@ -8,7 +8,7 @@
 <div id="footer">
 
 <div class="container">
-      Copyright &copy; <? echo date('Y'); ?><span style="font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#000;"><a href='http://demo.icwares.com/clients/dev/lp/599/v1/' style='text-decoration:none; font-size:16px; color:##494949;' target='_blank'> lessnerplumbing.com</a></span>, All Rights Reserved.
+      Copyright &copy; <?php  echo date('Y'); ?><span style="font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#000;"><a href='http://demo.icwares.com/clients/dev/lp/599/v1/' style='text-decoration:none; font-size:16px; color:##494949;' target='_blank'> lessnerplumbing.com</a></span>, All Rights Reserved.
      <a href="http://consult-ic.com/" target="_blank" class="power"></a>
 
    </div>

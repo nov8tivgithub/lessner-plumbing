@@ -21,7 +21,7 @@
                 email: {
                     required: true,
                     email: true,
-                    remote: "<? echo base_url().'admin/admin/checkemailexists'; ?>"
+                    remote: "<?php  echo base_url().'admin/admin/checkemailexists'; ?>"
                 }
 
 

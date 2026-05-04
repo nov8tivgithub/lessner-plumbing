@@ -1,6 +1,6 @@
-<link rel="stylesheet" media="screen" type="text/css" href="<? echo base_url(); ?>styles/colorbox.css" /> 
-<script src="<? echo base_url('scripts/ckeditor/ckeditor.js'); ?>"></script>  
-<script src="<? echo base_url(); ?>scripts/jquery.colorbox.js"></script>
+<link rel="stylesheet" media="screen" type="text/css" href="<?php  echo base_url(); ?>styles/colorbox.css" /> 
+<script src="<?php  echo base_url('scripts/ckeditor/ckeditor.js'); ?>"></script>  
+<script src="<?php  echo base_url(); ?>scripts/jquery.colorbox.js"></script>
 <script language="javascript">
   $(document).ready(function () {
 
@@ -214,21 +214,21 @@ function removetag(idd){
     </div>
     
 
-<? if(!empty($tags)): ?>   
+<?php  if(!empty($tags)): ?>   
 	<div class="col-sm-6">
         <div class="form-group">
            <label for="exampleInputEmail1">Tags</label>
            
            
             <div class="nmtag">
-               <? foreach($tags as $tk => $tval){?>
-					<input type="checkbox" name="tags[]" value="<? echo $tval['tagid'];?>" <? if($tval['checked']){?>checked<?}?>> <? echo $tval['tagname'];?>
-				<?}?>
+               <?php  foreach($tags as $tk => $tval){?>
+					<input type="checkbox" name="tags[]" value="<?php  echo $tval['tagid'];?>" <?php  if($tval['checked']){?>checked<?php }?>> <?php  echo $tval['tagname'];?>
+				<?php }?>
            </div>
            
            
           </div> 
-    </div> <? endif; ?>
+    </div> <?php  endif; ?>
 </div>
 
 <input type="hidden" name="editpost" value="1">

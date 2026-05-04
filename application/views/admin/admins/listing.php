@@ -1,7 +1,7 @@
 <script >
    function statchange(adminkey,status){
     if(confirm('Are you sure you want to '+status+' this user ?')){
-	   $.post('<? echo base_url().ADMIN."/changeadminstatus" ?>',{
+	   $.post('<?php  echo base_url().ADMIN."/changeadminstatus" ?>',{
 				   adminkey : adminkey,				
 				   act : 'statchange',
 				   status : status
@@ -38,7 +38,7 @@
         <div class="col-sm-6 offset0"><h3 class="cust_head"><?php echo $pageHeader; ?></h3></div>
         <div class="col-sm-6 ">
             <div class="btn-group btn-group-justified">
-            <? /* ?> <a href="<?php echo base_url().ADMIN.'/createadmin'?>" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Create</a><? */?> 
+            <?php  /* ?> <a href="<?php echo base_url().ADMIN.'/createadmin'?>" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Create</a><?php  */?> 
 				 
                  <a href="<?php echo base_url().ADMIN.'/adminmanager/Active'?>"  class="btn btn-default <?php if($status == 'Active'):{?>active<?php }?><?php endif; ?>">Active</a>
                  <a href="<?php echo base_url().ADMIN.'/adminmanager/Inactive' ?>"  class="btn btn-default <?php if($status == 'Inactive'):{?>active<?php }?><?php endif; ?>">Inactive</a>
@@ -64,7 +64,7 @@
 	if(!empty($Admins)):    
 		foreach($Admins as $admn):
 	?>
-	       <div class="row bordertop listvw" id="key_<? echo $admn['adminkey']; ?>">
+	       <div class="row bordertop listvw" id="key_<?php  echo $admn['adminkey']; ?>">
 		 		
 		  <div class="offset1 media">
 			<p class="pull-left"><img src="<?php echo $admn['profImg']; ?>" width="60" class="img-rounded img-responsive" /></p>
@@ -85,9 +85,9 @@
 			<div class="col-sm-4 pad-top">
 			<div class="btn-group">
 		     <?php if($admn['status'] == '0')  : ?>
-			<a class="btn btn-default btn-sm" onclick="statchange('<? echo $admn['adminkey']; ?>','Activate')"><span class="glyphicon glyphicon-ok"></span> Activate</a><?php endif; ?>
+			<a class="btn btn-default btn-sm" onclick="statchange('<?php  echo $admn['adminkey']; ?>','Activate')"><span class="glyphicon glyphicon-ok"></span> Activate</a><?php endif; ?>
 		     <?php if( ($this->session->userdata('adminKey') != $admn['adminkey']) and $admn['status'] == '1' ) : ?>
-			<a  class="btn btn-default btn-sm" onclick="statchange('<? echo $admn['adminkey']; ?>','Deactivate')"><span class="glyphicon glyphicon-trash"></span> Deactivate</a> <?php endif; ?>
+			<a  class="btn btn-default btn-sm" onclick="statchange('<?php  echo $admn['adminkey']; ?>','Deactivate')"><span class="glyphicon glyphicon-trash"></span> Deactivate</a> <?php endif; ?>
 		     <?php //if( $this->session->userdata('adminKey') != $admn['adminkey']) : ?>
 			<a class="btn btn-default btn-sm" href="<?php echo base_url().ADMIN.'/editadmin/'.$admn['adminkey'];?>"><span class="glyphicon glyphicon-pencil"></span> Edit</a> <?php //endif; ?>
 		     </div>
@@ -100,7 +100,7 @@
 		  
 	       </div>
 	
- <?
+ <?php 
 		endforeach;
 		else:
 			?>
