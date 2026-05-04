@@ -107,6 +107,7 @@ if (!defined('SI_IMAGE_GIF'))
  * @subpackage classes
  *
  */
+#[\AllowDynamicProperties]
 class Securimage {
 
     /**
@@ -513,7 +514,7 @@ class Securimage {
      * </code>
      *
      */
-    function Securimage()
+    function __construct()
     {
         // Initialize session or attach to existing
         if ( session_id() == '' ) { // no session has been started yet, which is needed for validation
@@ -752,8 +753,11 @@ class Securimage {
             }
         }
 
+        if (empty($this->bgimg)) {
+            return;
+        }
         $dat = @getimagesize($this->bgimg);
-        if($dat == false) { 
+        if($dat == false) {
             return;
         }
 
@@ -1532,6 +1536,7 @@ class Securimage {
  * @subpackage classes
  *
  */
+#[\AllowDynamicProperties]
 class Securimage_Color {
     /**
      * Red component: 0-255
@@ -1562,7 +1567,7 @@ class Securimage_Color {
      * @param $green Green component 0-255
      * @param $blue Blue component 0-255
      */
-    function Securimage_Color($red, $green = null, $blue = null)
+    function __construct($red, $green = null, $blue = null)
     {
         if ($green == null && $blue == null && preg_match('/^#[a-f0-9]{3,6}$/i', $red)) {
             $col = substr($red, 1);

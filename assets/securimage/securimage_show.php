@@ -1,4 +1,6 @@
 <?php
+error_reporting(E_ALL & ~E_DEPRECATED & ~E_NOTICE & ~E_WARNING);
+ini_set('display_errors', 0);
 
 /**
  * Project:     Securimage: A PHP class for creating and managing form CAPTCHA images<br />
