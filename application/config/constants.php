@@ -33,15 +33,17 @@ if (IS_LIVE) {
 define('PWD','lppwd');
 if (IS_LIVE) {
 	define('ADMINEMAIL','admin@lessnerplumbing.com');
+	define('TOMAIL','kirsten@lessnerplumbing.com');
 } else {
 	define('ADMINEMAIL','test@icwares.com');
+	define('TOMAIL','test5@icwares.com');
 }
 //define('TOMAIL','admin@lessnerplumbing.com');
-if( $_SERVER['REMOTE_ADDR'] == '59.90.28.106' ){ 
-	define('TOMAIL','test@icwares.com');
-}else{
-	define('TOMAIL','kirsten@lessnerplumbing.com');
-}
+// if( $_SERVER['REMOTE_ADDR'] == '59.90.28.106' ){ 
+// 	define('TOMAIL','test@icwares.com');
+// }else{
+// 	define('TOMAIL','kirsten@lessnerplumbing.com');
+// }
 
 define('PAGE_LIMIT',10);
 define('ADMIN','lpadmin');//for admin url
