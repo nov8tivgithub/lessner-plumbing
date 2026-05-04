@@ -1,3 +1,4 @@
+<?php $pagetitle = $pagetitle ?? ''; $createurl = $createurl ?? ''; ?>
 <!DOCTYPE HTML>
 <html lang="en">
     <head>
