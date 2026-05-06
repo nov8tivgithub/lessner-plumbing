@@ -427,6 +427,8 @@
     ->message($msg)
     ->send();
 					  
+	print_r($result);
+	exit();
 					  
 					  
 					  $data[ 'hasSucess' ] = TRUE;
