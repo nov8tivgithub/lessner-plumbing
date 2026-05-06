@@ -26,8 +26,11 @@ if (IS_LIVE) {
 } else {
 	// Google's public reCAPTCHA test keys — work on any domain (incl. localhost) and always verify successfully.
 	// See https://developers.google.com/recaptcha/docs/faq
-	define('GOOGLESITEKEY','6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI');
-	define('GOOGLESECRETKEY','6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe');
+	// define('GOOGLESITEKEY','6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI');
+	// define('GOOGLESECRETKEY','6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe');
+	// new created
+	define('GOOGLESITEKEY','6LdfotosAAAAAHpawoeIIhLl0waG5WjAlxrKKA5E');
+	define('GOOGLESECRETKEY','6LdfotosAAAAAMvQj0I8cVZw13EQ-NYI3kcEJTLH');
 }
 
 define('PWD','lppwd');
