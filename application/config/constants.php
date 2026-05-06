@@ -39,7 +39,7 @@ if (IS_LIVE) {
 	define('TOMAIL','kirsten@lessnerplumbing.com');
 } else {
 	define('ADMINEMAIL','test@icwares.com');
-	define('TOMAIL','saran@swizzleup.com');
+	define('TOMAIL','test5@icwares.com');
 }
 //define('TOMAIL','admin@lessnerplumbing.com');
 // if( $_SERVER['REMOTE_ADDR'] == '59.90.28.106' ){ 
