@@ -416,19 +416,17 @@
 			  	
                     if ( $success == 1 ){
 					  $msg = $this->load->view( 'frontend/mail/contactus', $data, true );
-					  //$this->corefunctions->sendmail( ADMINEMAIL,TOMAIL,'Customer Inquiry', $msg );
+					  $this->corefunctions->sendmail( ADMINEMAIL,TOMAIL,'Customer Inquiry', $msg );
 					  //$this->corefunctions->sendmail( ADMINEMAIL,'keerthi@consult-ic.com','Customer Inquiry', $msg );
 					  
 					  
-					  $result = $this->email
-    ->from(ADMINEMAIL)
-    ->to(TOMAIL)
-    ->subject('Customer Inquiry')
-    ->message($msg)
-    ->send();
+	// 				  $result = $this->email
+    // ->from(ADMINEMAIL)
+    // ->to(TOMAIL)
+    // ->subject('Customer Inquiry')
+    // ->message($msg)
+    // ->send();
 					  
-	print_r($result);
-	exit();
 					  
 					  
 					  $data[ 'hasSucess' ] = TRUE;
