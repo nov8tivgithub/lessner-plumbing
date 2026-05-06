@@ -222,7 +222,7 @@ function removetag(idd){
            
             <div class="nmtag">
                <?php  foreach($tags as $tk => $tval){?>
-					<input type="checkbox" name="tags[]" value="<?php  echo $tval['tagid'];?>" <?php  if($tval['checked']){?>checked<?php }?>> <?php  echo $tval['tagname'];?>
+					<input type="checkbox" name="tags[]" value="<?php  echo $tval['tagid'];?>" <?php  if(!empty($tval['checked'])){?>checked<?php }?>> <?php  echo $tval['tagname'];?>
 				<?php }?>
            </div>
            
