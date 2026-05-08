@@ -395,10 +395,10 @@
 	      $this->load->library('email');
 	      $data = array();
 	  	  if ( $this->input->post( 'act' ) == "contact" ) {
-		  $this->form_validation->set_rules( 'firstname', 'Name', 'required|xss_clean' );
-          $this->form_validation->set_rules( 'lastname', 'Last Name', 'required|xss_clean' );
+		  $this->form_validation->set_rules( 'firstname', 'First Name', 'trim|required|min_length[2]|regex_match[/^[A-Za-z][A-Za-z .\'\-]*[A-Za-z]$/]|xss_clean' );
+          $this->form_validation->set_rules( 'lastname', 'Last Name', 'trim|required|min_length[2]|regex_match[/^[A-Za-z][A-Za-z .\'\-]*[A-Za-z]$/]|xss_clean' );
           $this->form_validation->set_rules( 'email', 'Email', 'required|valid_email|xss_clean' );
-          $this->form_validation->set_rules( 'message', 'Message', 'required|xss_clean' ); 
+          $this->form_validation->set_rules( 'message', 'Message', 'trim|required|min_length[10]|regex_match[/[A-Za-z]{2,}/]|xss_clean' );
 			  if ( $this->form_validation->run() === FALSE )
 			  {
 				$data[ 'haserror' ] = TRUE;

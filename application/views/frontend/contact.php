@@ -3,12 +3,33 @@
 <script language="javascript">
  $(document).ready(function () {
 
+        jQuery.validator.addMethod("personName", function (value, element) {
+            return this.optional(element) || /^[A-Za-z][A-Za-z .'-]*[A-Za-z]$/.test($.trim(value));
+        }, "Please enter a valid name (letters only, at least 2 characters)");
+
+        jQuery.validator.addMethod("meaningfulText", function (value, element) {
+            var trimmed = $.trim(value);
+            return this.optional(element) || (trimmed.length >= 10 && /[A-Za-z]{2,}/.test(trimmed));
+        }, "Please enter a meaningful message (at least 10 characters)");
+
         $("#contactus").validate({
             ignore : [],
             rules: {
-                firstname: 'required',
-                lastname: 'required',
-                message: 'required',
+                firstname: {
+                    required: true,
+                    minlength: 2,
+                    personName: true
+                },
+                lastname: {
+                    required: true,
+                    minlength: 2,
+                    personName: true
+                },
+                message: {
+                    required: true,
+                    minlength: 10,
+                    meaningfulText: true
+                },
                 //captchacode  : 'required',
                 hiddenRecaptchacontact : {
                      required: function() {
@@ -32,9 +53,21 @@
 
             },
             messages: {
-                firstname: 'Please enter First Name',
-                lastname: 'Please enter Last Name',
-                message: 'Please enter Message',
+                firstname: {
+                    required: 'Please enter First Name',
+                    minlength: 'First Name must be at least 2 characters',
+                    personName: 'Please enter a valid First Name'
+                },
+                lastname: {
+                    required: 'Please enter Last Name',
+                    minlength: 'Last Name must be at least 2 characters',
+                    personName: 'Please enter a valid Last Name'
+                },
+                message: {
+                    required: 'Please enter Message',
+                    minlength: 'Message must be at least 10 characters',
+                    meaningfulText: 'Please enter a meaningful message'
+                },
                 //captchacode   : 'Please enter security code'
                 hiddenRecaptchacontact   : 'Please verify your identity',
                 phone:{
