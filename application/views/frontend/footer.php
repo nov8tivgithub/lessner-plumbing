@@ -85,7 +85,7 @@
     	</div>
         
         <div class="footer_bottom">
-        	<p class="copyryt">&copy; 2014 lessnerplumbing.com,  All Rights Reserved.</p>
+        	<p class="copyryt">&copy; <?php echo date('Y'); ?> lessnerplumbing.com,  All Rights Reserved.</p>
             <p class="master"> Master License Number 76242</p>
             <a href="http://consult-ic.com/" target="_blank" class="powrdby"></a>
         <div class="clear"></div>
