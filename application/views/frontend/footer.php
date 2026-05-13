@@ -3,21 +3,21 @@
         	<div class="w970 slideInLeft wow">  
                <div>
                   <div class="foot_nav FL"> 
-                      <a class="white"  href="<? echo base_url('home'); ?>">Home</a>
-                      <a class="white" href="<? echo base_url('aboutus'); ?>">About Us</a>
-                      <a class="white" href="<? echo base_url('service'); ?>">Services</a>
-                      <a class="white" href="<? echo base_url('servicearea'); ?>">Service Area</a>
-                      <a style="display:none" class="white" href="<? echo base_url('blog'); ?>">Blogs</a>
-                       <a  class="white" href="<? echo base_url('gallery'); ?>">Gallery</a>
+                      <a class="white"  href="<?php  echo base_url('home'); ?>">Home</a>
+                      <a class="white" href="<?php  echo base_url('aboutus'); ?>">About Us</a>
+                      <a class="white" href="<?php  echo base_url('service'); ?>">Services</a>
+                      <a class="white" href="<?php  echo base_url('servicearea'); ?>">Service Area</a>
+                      <a style="display:none" class="white" href="<?php  echo base_url('blog'); ?>">Blogs</a>
+                       <a  class="white" href="<?php  echo base_url('gallery'); ?>">Gallery</a>
                      
                       
-                      <a class="white" href="<? echo base_url('contactus'); ?>">Contact Us</a>
+                      <a class="white" href="<?php  echo base_url('contactus'); ?>">Contact Us</a>
                   </div>
                   
                   <div class="callus_01 FL">
                       <p class="foothd">Call Today</p>
-                      <? if(strstr($_SERVER['HTTP_USER_AGENT'],'iPhone')) {?><a class="numbr" href="tel:4107468415">410-746-8415</a><? } else {?>
-                      <span class="bigtxt textsm"><span>410-</span><span>746-</span>8415</span><? } ?>
+                      <?php  if(strstr($_SERVER['HTTP_USER_AGENT'],'iPhone')) {?><a class="numbr" href="tel:4107468415">410-746-8415</a><?php  } else {?>
+                      <span class="bigtxt textsm"><span>410-</span><span>746-</span>8415</span><?php  } ?>
                   </div>
                   
                   
@@ -26,8 +26,8 @@
                       <div class="foothd FR">Follow Us</div>
                       <div class="clear"></div>
                       <div>
-                      <?php /*?><a class="soc_icn"><img src="<?echo base_url();?>img/twtr_icn.png" /></a><?php */?> 
-                      <a href="https://www.facebook.com/lessnerplumbing" class="soc_icn"><img src="<?echo base_url();?>img/faceicn.png" /></a>
+                      <?php /*?><a class="soc_icn"><img src="<?php echo base_url();?>img/twtr_icn.png" /></a><?php */?> 
+                      <a href="https://www.facebook.com/lessnerplumbing" class="soc_icn"><img src="<?php echo base_url();?>img/faceicn.png" /></a>
                       </div>
                   </div>
                 </div>
@@ -49,8 +49,8 @@
                     </div>
                    <?php /* <div class="callus FL">
                         <p class="foothd">Call Today</p>
-                        <? if(strstr($_SERVER['HTTP_USER_AGENT'],'iPhone')) {?><a class="numbr" href="tel:4107468415">410-746-8415</a><? } else {?>
-                        <span class="bigtxt"><span>410-</span><span>746-</span>8415</span><? } ?>
+                        <?php  if(strstr($_SERVER['HTTP_USER_AGENT'],'iPhone')) {?><a class="numbr" href="tel:4107468415">410-746-8415</a><?php  } else {?>
+                        <span class="bigtxt"><span>410-</span><span>746-</span>8415</span><?php  } ?>
                     </div>*/?>
                     <div class="adres_03 FL ">
                       <p>Lessner Services<br>3831 Maple Grove Rd.  <br>Manchester, MD 21102.</p>
@@ -74,8 +74,8 @@
                     </div>
                     <div class="callus FL">
                       <p class="foothd">Call Today</p>
-                      <? if(strstr($_SERVER['HTTP_USER_AGENT'],'iPhone')) {?><a class="numbr" href="tel:4107468415">410-746-8415</a><? } else {?>
-                      <span class="bigtxt"><span>410-</span><span>746-</span>8415</span><? } ?>
+                      <?php  if(strstr($_SERVER['HTTP_USER_AGENT'],'iPhone')) {?><a class="numbr" href="tel:4107468415">410-746-8415</a><?php  } else {?>
+                      <span class="bigtxt"><span>410-</span><span>746-</span>8415</span><?php  } ?>
                   </div>
                   </div>*/?>
                   

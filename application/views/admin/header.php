@@ -1,3 +1,4 @@
+<?php $pagetitle = $pagetitle ?? ''; $createurl = $createurl ?? ''; ?>
 <!DOCTYPE HTML>
 <html lang="en">
     <head>
@@ -41,7 +42,7 @@
    		<div class="navbar navbar-inverse" role="navigation" >
         	
             <div class="container-fluid">
-            <a class="navbar-brand" href="<? echo base_url().ADMIN.'/adminmanager'; ?>"><img src="<?php echo base_url();?>images/logowhite.png" width="53"/></a>
+            <a class="navbar-brand" href="<?php  echo base_url().ADMIN.'/adminmanager'; ?>"><img src="<?php echo base_url();?>images/logowhite.png" width="53"/></a>
               		<div class="navbar-header">
 						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                         <span class="sr-only">Toggle navigation</span>
@@ -58,18 +59,18 @@
 <img src="<?php echo $this->session->userdata( 'adminImage' ); ?>" width="36" class="img-circle"  style="margin-right:4px;"/>
 									<?php echo ucfirst($this->session->userdata( 'adminFirstname' )) .' '. ucfirst($this->session->userdata( 'adminLastname' ));?><b class="caret"></b></span>
                                     <ul class="dropdown-menu dropdown-menu-right cus-top-drp dp-icnSpn" role="menu">
-                                        <li><a href="<? echo base_url().ADMIN.'/myprofile'; ?>" class="navbar-link"><span class="glyphicon glyphicon-user"></span>My Profile</a></li> 
+                                        <li><a href="<?php  echo base_url().ADMIN.'/myprofile'; ?>" class="navbar-link"><span class="glyphicon glyphicon-user"></span>My Profile</a></li> 
                                         <li class="divider"></li>
-                                        <li><a href="<? echo base_url().ADMIN.'/logout'; ?>" class="navbar-link"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
+                                        <li><a href="<?php  echo base_url().ADMIN.'/logout'; ?>" class="navbar-link"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
                                		</ul>
 								</li>
 							</ul>
                             <ul class="nav navbar-nav nav-stacked dp-icnSpn">
 								
 								<li class="divider"></li>
-<li class="<?php if($titlecls=='admin'){echo 'active';}?> cus-bttm-brdr"><a href="<? echo base_url().ADMIN.'/adminmanager'; ?>"><span class="glyphicon glyphicon-globe"></span>Admins</a></li>
+<li class="<?php if($titlecls=='admin'){echo 'active';}?> cus-bttm-brdr"><a href="<?php  echo base_url().ADMIN.'/adminmanager'; ?>"><span class="glyphicon glyphicon-globe"></span>Admins</a></li>
 
-<li class="<?php if($titlecls=='post'){echo 'active';}?> cus-bttm-brdr"><a href="<? echo base_url().ADMIN.'/blogmanager'; ?>"><span class="glyphicon glyphicon-send"></span>Blogs </a></li>
+<li class="<?php if($titlecls=='post'){echo 'active';}?> cus-bttm-brdr"><a href="<?php  echo base_url().ADMIN.'/blogmanager'; ?>"><span class="glyphicon glyphicon-send"></span>Blogs </a></li>
 	
 	<a class="cus-close" onClick="clse()"><span class="glyphicon glyphicon-remove"></span></a>
 							</ul>
@@ -90,13 +91,13 @@
             <div class="col-sm-6 FL offset0">
            		<h3 class="main-hd-h3"><?php echo $pagetitle;?></h3>
             </div>
-            <? if($createurl): ?>
+            <?php  if($createurl): ?>
             <div class="col-sm-3 pad0 FR">
                         <div class="btn-group FR smllScrn">
                        		<a href="<?php echo $createurl;?>" class="btn btn-primary bn-cust"><span class="glyphicon glyphicon-plus"></span> Create</a>
                         </div>
                  </div>
-               <? endif; ?>
+               <?php  endif; ?>
                  </div>
              </div>    
         </div>
@@ -116,7 +117,7 @@
               <li class="active"><?php echo $brd['title']?></li>
              <?php }?>
             
-            <?
+            <?php 
 		endforeach;
 		?>
 		</ol>

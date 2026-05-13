@@ -1,13 +1,35 @@
+<?php $haserror = $haserror ?? ''; $hasSucess = $hasSucess ?? ''; ?>
 <script src='https://www.google.com/recaptcha/api.js'></script>
 <script language="javascript">
  $(document).ready(function () {
 
+        jQuery.validator.addMethod("personName", function (value, element) {
+            return this.optional(element) || /^[A-Za-z][A-Za-z .'-]*[A-Za-z]$/.test($.trim(value));
+        }, "Please enter a valid name (letters only, at least 2 characters)");
+
+        jQuery.validator.addMethod("meaningfulText", function (value, element) {
+            var trimmed = $.trim(value);
+            return this.optional(element) || (trimmed.length >= 10 && /[A-Za-z]{2,}/.test(trimmed));
+        }, "Please enter a meaningful message (at least 10 characters)");
+
         $("#contactus").validate({
             ignore : [],
             rules: {
-                firstname: 'required',
-                lastname: 'required',
-                message: 'required',
+                firstname: {
+                    required: true,
+                    minlength: 2,
+                    personName: true
+                },
+                lastname: {
+                    required: true,
+                    minlength: 2,
+                    personName: true
+                },
+                message: {
+                    required: true,
+                    minlength: 10,
+                    meaningfulText: true
+                },
                 //captchacode  : 'required',
                 hiddenRecaptchacontact : {
                      required: function() {
@@ -31,9 +53,21 @@
 
             },
             messages: {
-                firstname: 'Please enter First Name',
-                lastname: 'Please enter Last Name',
-                message: 'Please enter Message',
+                firstname: {
+                    required: 'Please enter First Name',
+                    minlength: 'First Name must be at least 2 characters',
+                    personName: 'Please enter a valid First Name'
+                },
+                lastname: {
+                    required: 'Please enter Last Name',
+                    minlength: 'Last Name must be at least 2 characters',
+                    personName: 'Please enter a valid Last Name'
+                },
+                message: {
+                    required: 'Please enter Message',
+                    minlength: 'Message must be at least 10 characters',
+                    meaningfulText: 'Please enter a meaningful message'
+                },
                 //captchacode   : 'Please enter security code'
                 hiddenRecaptchacontact   : 'Please verify your identity',
                 phone:{
@@ -129,12 +163,12 @@
             	<span class="icnspnmail botomout"></span>
               	<p class="spntxt">adam@lessnerplumbing.com</p>
             </div>-->
-            <? if(strstr($_SERVER['HTTP_USER_AGENT'],'iPhone')) {?> <a href="tel:410-746-8415" class="statbx icnspnphon-wrp FR">
+            <?php  if(strstr($_SERVER['HTTP_USER_AGENT'],'iPhone')) {?> <a href="tel:410-746-8415" class="statbx icnspnphon-wrp FR">
                      
                  <p class="spntxt"> <span class="icnspnphon botomout"></span> 410&shy;-746-8415 </p>
-            </a><? } else {?>
+            </a><?php  } else {?>
                 <div class="statbx FL icnspnphon-wrp"> 
-            <p class="spntxt"> <span class="icnspnphon botomout"></span> 410&shy;-746-8415 </p> </div> <? } ?>
+            <p class="spntxt"> <span class="icnspnphon botomout"></span> 410&shy;-746-8415 </p> </div> <?php  } ?>
             <div class="statbx FL">
             	<span class="icnspnadd botomout"></span>
               	<p class="spntxt"> Lessner Services<br />
@@ -173,12 +207,12 @@
         	<div class="frmrw">
                     <div class="hfrw FL">
                         <p>First Name</p>
-                        <input type="text" class="required" id="firstname" name="firstname" value="<? echo htmlspecialchars( $this->input->post('firstname')); ?>"/>
+                        <input type="text" class="required" id="firstname" name="firstname" value="<?php  echo htmlspecialchars( $this->input->post('firstname')); ?>"/>
                     </div>
 
                     <div class="hfrw FR">
                         <p>Last Name</p>
-                        <input type="text" class="required" id="lastname" name="lastname" value="<? echo  htmlspecialchars($this->input->post('lastname')); ?>"/>
+                        <input type="text" class="required" id="lastname" name="lastname" value="<?php  echo  htmlspecialchars($this->input->post('lastname')); ?>"/>
                     </div>
             <div class="clear"></div>
             </div>
@@ -186,12 +220,12 @@
             <div class="frmrw">
                     <div class="hfrw FL">
                         <p>Email</p>
-                        <input type="email" class="required" id="email" name="email" value="<? echo  $this->input->post('email'); ?>"/>
+                        <input type="email" class="required" id="email" name="email" value="<?php  echo  $this->input->post('email'); ?>"/>
                     </div>
 
                     <div class="hfrw FR">
                         <p>Phone</p>
-                        <input type="text" class="required" id="phone" name="phone" value="<? echo  $this->input->post('phone'); ?>"/>
+                        <input type="text" class="required" id="phone" name="phone" value="<?php  echo  $this->input->post('phone'); ?>"/>
                     </div>
             <div class="clear"></div>
             </div>
@@ -199,7 +233,7 @@
             <div class="frmrw">
                     <div class="hfrw FL msgadj">
                         <p>Message</p>
-                        <textarea name="message" class="required" id="message" value="<? echo  $this->input->post('message'); ?>"><? echo  htmlspecialchars($this->input->post('message')); ?></textarea>
+                        <textarea name="message" class="required" id="message" value="<?php  echo  $this->input->post('message'); ?>"><?php  echo  htmlspecialchars($this->input->post('message')); ?></textarea>
                     </div>
 
                     <div class="hfrw FR">
@@ -213,7 +247,7 @@
                             	</a>
                         </div>
                         </div>
-                        <input type="text" id="captchacode" name="captchacode" value="<?if($haserror == ""):  echo  $this->input->post('captchacode'); endif;?>"/> */ ?>
+                        <input type="text" id="captchacode" name="captchacode" value="<?php if($haserror == ""):  echo  $this->input->post('captchacode'); endif;?>"/> */ ?>
                         <div class="row mb20">
 						  <div class="col-xs-12 res-captcha for-signup mt15 pl0">
 							<div class="g-recaptcha custom-captcha signup-captcha" data-callback="recaptchaCallback_contact" data-sitekey="<?php echo GOOGLESITEKEY;?>" data-theme="light"></div>

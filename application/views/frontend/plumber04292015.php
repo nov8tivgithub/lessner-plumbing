@@ -1,10 +1,10 @@
 <div id="banepic">
 	<div class="srvcbanr"></div>
-		<h3 class="greshblu PTB20 bgadj fadeInRight wow">Plumbers in <? echo $location; ?></h3>
+		<h3 class="greshblu PTB20 bgadj fadeInRight wow">Plumbers in <?php  echo $location; ?></h3>
 	<div class="grbgcon">
-		<p class="contp fadeInLeft wow">Lessner Plumbing is a quality plumber serving <? echo $location; ?>.
-		Our plumbers install and repair drains, gas lines, sewer lines, septic systems, water heaters, water lines, and wells in <? echo $location; ?>.
-		Receive an efficient, quality job at a fair price from Lessner Plumbing, your <? echo $location; ?> plumber please call today 410 – 746 –
+		<p class="contp fadeInLeft wow">Lessner Plumbing is a quality plumber serving <?php  echo $location; ?>.
+		Our plumbers install and repair drains, gas lines, sewer lines, septic systems, water heaters, water lines, and wells in <?php  echo $location; ?>.
+		Receive an efficient, quality job at a fair price from Lessner Plumbing, your <?php  echo $location; ?> plumber please call today 410 – 746 –
 		8415.
 		</p>
     			<div class="grbgcon">

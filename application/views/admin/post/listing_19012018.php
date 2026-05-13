@@ -1,7 +1,7 @@
 <script >
    function statchange(postkey,status){
     if(confirm('Are you sure you want to '+status+' this blog ?')){
-	   $.post('<? echo base_url().ADMIN."/changeblogstatus" ?>',{
+	   $.post('<?php  echo base_url().ADMIN."/changeblogstatus" ?>',{
 				   postkey : postkey,				
 				   act : 'statchange',
 				   status : status
@@ -64,7 +64,7 @@
 	if(!empty($post)):    
 		foreach($post as $new):
 	?>
-	       <div class="row bordertop listvw" id="key_<? echo $new['postkey']; ?>">
+	       <div class="row bordertop listvw" id="key_<?php  echo $new['postkey']; ?>">
 		 		
 		 
            <div class="col-sm-3"><img src="<?php echo $new['Img']; ?>" width="300" class="img-rounded img-responsive padd-BTM" /></div>
@@ -88,9 +88,9 @@
 			<div class="col-sm-3 pad-top ">
                 <div class="btn-group">
 					 <?php if($new['status'] == '0')  : ?>
-                    <a class="btn btn-default btn-sm" onclick="statchange('<? echo $new['postkey']; ?>','Activate')"><span class="glyphicon glyphicon-ok"></span> Activate</a><?php endif; ?>
+                    <a class="btn btn-default btn-sm" onclick="statchange('<?php  echo $new['postkey']; ?>','Activate')"><span class="glyphicon glyphicon-ok"></span> Activate</a><?php endif; ?>
                      <?php if($new['status'] == '1' ) : ?>
-                    <a  class="btn btn-default btn-sm" onclick="statchange('<? echo $new['postkey']; ?>','Deactivate')"><span class="glyphicon glyphicon-trash"></span> Deactivate</a> <?php endif; ?>
+                    <a  class="btn btn-default btn-sm" onclick="statchange('<?php  echo $new['postkey']; ?>','Deactivate')"><span class="glyphicon glyphicon-trash"></span> Deactivate</a> <?php endif; ?>
                     <a class="btn btn-default btn-sm" href="<?php echo base_url().ADMIN.'/editblog/'.$new['postkey'];?>"><span class="glyphicon glyphicon-pencil"></span> Edit</a>
                  </div>
 			</div>
@@ -99,7 +99,7 @@
 		  
 	       </div>
 	
- <?
+ <?php 
 		endforeach;
 		else:
 			?>

@@ -138,7 +138,7 @@
                 <div class="mar2_bttm input-group-lg"><input type="password" class="form-control loginput" placeholder="Password" name="password"></div>
                 <div ><input type="submit" class="btn btn-default btn-lg btn-block cus-log-in" value="Login" /></div>
 				<div class="row align-center forgotfix">
-               	<a href="<? echo base_url().ADMIN.'/forgotpassword'; ?>"  class="btn-link">Forgot Password ?</a>
+               	<a href="<?php  echo base_url().ADMIN.'/forgotpassword'; ?>"  class="btn-link">Forgot Password ?</a>
 				  <input type="hidden" name="Login" value="1">
                 </div>
 				</div>
@@ -147,7 +147,7 @@
             </div>
             </form>
             <div class="coprgt">
-						<p>Copyright &copy; <? echo date('Y'); ?> lessnerplumbing.com, All Rights Reserved.<p>
+						<p>Copyright &copy; <?php  echo date('Y'); ?> lessnerplumbing.com, All Rights Reserved.<p>
             </div>
             <div class="text-center pt20">
 					 <a href="http://consult-ic.com/" target="_blank"><img src="<?php echo base_url();?>images/powrdby.png"/></a>

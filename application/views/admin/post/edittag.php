@@ -1,6 +1,6 @@
-<link rel="stylesheet" media="screen" type="text/css" href="<? echo base_url(); ?>styles/colorbox.css" />  
-<script src="<? echo base_url('scripts/ckeditor/ckeditor.js'); ?>"></script>
-<script src="<? echo base_url('scripts/jquery.colorbox.js'); ?>"></script>
+<link rel="stylesheet" media="screen" type="text/css" href="<?php  echo base_url(); ?>styles/colorbox.css" />  
+<script src="<?php  echo base_url('scripts/ckeditor/ckeditor.js'); ?>"></script>
+<script src="<?php  echo base_url('scripts/jquery.colorbox.js'); ?>"></script>
 
 <script language="javascript">
   $(document).ready(function () {

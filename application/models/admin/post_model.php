@@ -245,7 +245,7 @@
           return (empty($loadmr)) ? '0' : '1'; 
       }
 
-      public function all_post_loadmore( $status = '1', $alpha = NULL, $postid ) {
+      public function all_post_loadmore( $status, $alpha, $postid ) {
           $sql = 'SELECT *  from ' . $this->db->dbprefix( 'posts' ) . ' where status= ? ';
           if ( $alpha != "" ) {
               $sql .= "and title LIKE '$alpha%'  ";

@@ -7,11 +7,11 @@
         	<p class="contp fadeInLeft wow">At Lessner Plumbing we offer professional plumbing services for your home and business. Proudly service the Baltimore, Maryland metropolitan area including Baltimore County, Baltimore City, Carroll County and Harford County.
 </p>
         <div class="statbx_contnr fadeInRight wow">    
-            <a class="service_statbx FL" href="<? echo base_url('draincleaning'); ?>">
+            <a class="service_statbx FL" href="<?php  echo base_url('draincleaning'); ?>">
             	<div class="imgcrcl"><img src="img/draincleaning.jpg" /></div>
                 <span class="sublnk">Drain Cleaning Services</span> 
             </a>
-            <a class="service_statbx FR" href="<? echo base_url('polybutylenepipe'); ?>">
+            <a class="service_statbx FR" href="<?php  echo base_url('polybutylenepipe'); ?>">
             	<div class="imgcrcl"><img src="img/polybutylene.jpg" /></div>
               	<span class="sublnk">Polybutylene Pipe Replacement and Water Service Repair</span>
             </a >

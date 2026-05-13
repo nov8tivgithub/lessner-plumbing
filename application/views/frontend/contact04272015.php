@@ -116,12 +116,12 @@
 					Glyndon, MD 21071-0272
                 </p>  
             </div>
-           <? if(strstr($_SERVER['HTTP_USER_AGENT'],'iPhone')) {?> <a href="tel:410-746-8415" class="statbx FR">
+           <?php  if(strstr($_SERVER['HTTP_USER_AGENT'],'iPhone')) {?> <a href="tel:410-746-8415" class="statbx FR">
             		 <span class="icnspnphon botomout"></span>
              	 <p class="spntxt"> 410&shy;-746-8415 </p>  
-            </a><? } else {?> 
+            </a><?php  } else {?> 
 				<div class="statbx FR">	<span class="icnspnphon botomout"></span>
-			<p class="spntxt"> 410&shy;-746-8415 </p> </div> <? } ?>
+			<p class="spntxt"> 410&shy;-746-8415 </p> </div> <?php  } ?>
 				 
         <div class="clear"></div>
         </div>
@@ -138,12 +138,12 @@
         	<div class="frmrw">
                     <div class="hfrw FL">
                         <p>First Name</p>
-                        <input type="text" class="required" id="firstname" name="firstname" value="<? echo htmlspecialchars( $this->input->post('firstname')); ?>"/>
+                        <input type="text" class="required" id="firstname" name="firstname" value="<?php  echo htmlspecialchars( $this->input->post('firstname')); ?>"/>
                     </div>
                     
                     <div class="hfrw FR">
                         <p>Last Name</p>
-                        <input type="text" class="required" id="lastname" name="lastname" value="<? echo  htmlspecialchars($this->input->post('lastname')); ?>"/>
+                        <input type="text" class="required" id="lastname" name="lastname" value="<?php  echo  htmlspecialchars($this->input->post('lastname')); ?>"/>
                     </div>
             <div class="clear"></div>
             </div>
@@ -151,12 +151,12 @@
             <div class="frmrw">
                     <div class="hfrw FL">
                         <p>Email</p>
-                        <input type="email" class="required" id="email" name="email" value="<? echo  $this->input->post('email'); ?>"/>
+                        <input type="email" class="required" id="email" name="email" value="<?php  echo  $this->input->post('email'); ?>"/>
                     </div>
                     
                     <div class="hfrw FR">
                         <p>Phone</p>
-                        <input type="text" class="required" id="phone" name="phone" value="<? echo  $this->input->post('phone'); ?>"/>
+                        <input type="text" class="required" id="phone" name="phone" value="<?php  echo  $this->input->post('phone'); ?>"/>
                     </div>
             <div class="clear"></div>
             </div>
@@ -164,7 +164,7 @@
             <div class="frmrw">
                     <div class="hfrw FL msgadj">
                         <p>Message</p>
-                        <textarea name="message" class="required" id="message" value="<? echo  $this->input->post('message'); ?>"><? echo  htmlspecialchars($this->input->post('message')); ?></textarea>
+                        <textarea name="message" class="required" id="message" value="<?php  echo  $this->input->post('message'); ?>"><?php  echo  htmlspecialchars($this->input->post('message')); ?></textarea>
                     </div>
                     
                     <div class="hfrw FR">
@@ -177,7 +177,7 @@
                             	</a>
                         </div>
                         </div>
-                        <input type="text" id="captchacode" name="captchacode" value="<?if($haserror == ""):  echo  $this->input->post('captchacode'); endif;?>"/>
+                        <input type="text" id="captchacode" name="captchacode" value="<?php if($haserror == ""):  echo  $this->input->post('captchacode'); endif;?>"/>
                     </div>					
             <div class="clear"></div>
             </div>

@@ -383,7 +383,7 @@
 	  	$headerdata['activeclass']	  = "about";
         $headerdata['title']	      = "About: Lessner Plumbing : Licensed  & Insured Plumbing Services | Baltimore Metro Area | 410-746-8415"; 		  
 	    $headerdata['keywords']	      = "Who we are, what we offer, our guarantee"; 
-	    $headerdata['description']	  = "Family owned and operated company offering full residential and commercial service to Baltimore metro area. Same day, emergency, night, weekend, and holiday service. 10% senior discount. Clean courteous, professional, licensed, and insured. Prices quoted upfront, we don’t start until you have a full understanding of the work to be completed.";		
+	    $headerdata['description']	  = "Family owned and operated company offering full residential and commercial service to Baltimore metro area. Same day, emergency, night, weekend, and holiday service. 10% senior discount. Clean courteous, professional, licensed, and insured. Prices quoted upfront, we donï¿½t start until you have a full understanding of the work to be completed.";		
 		
 		
           $this->load->view( 'frontend/header',$headerdata);		  
@@ -393,11 +393,12 @@
 	  
 	  public function contactus() {
 	      $this->load->library('email');
+	      $data = array();
 	  	  if ( $this->input->post( 'act' ) == "contact" ) {
-		  $this->form_validation->set_rules( 'firstname', 'Name', 'required|xss_clean' );
-          $this->form_validation->set_rules( 'lastname', 'Last Name', 'required|xss_clean' );
+		  $this->form_validation->set_rules( 'firstname', 'First Name', 'trim|required|min_length[2]|regex_match[/^[A-Za-z][A-Za-z .\'\-]*[A-Za-z]$/]|xss_clean' );
+          $this->form_validation->set_rules( 'lastname', 'Last Name', 'trim|required|min_length[2]|regex_match[/^[A-Za-z][A-Za-z .\'\-]*[A-Za-z]$/]|xss_clean' );
           $this->form_validation->set_rules( 'email', 'Email', 'required|valid_email|xss_clean' );
-          $this->form_validation->set_rules( 'message', 'Message', 'required|xss_clean' ); 
+          $this->form_validation->set_rules( 'message', 'Message', 'trim|required|min_length[10]|regex_match[/[A-Za-z]{2,}/]|xss_clean' );
 			  if ( $this->form_validation->run() === FALSE )
 			  {
 				$data[ 'haserror' ] = TRUE;
@@ -415,16 +416,16 @@
 			  	
                     if ( $success == 1 ){
 					  $msg = $this->load->view( 'frontend/mail/contactus', $data, true );
-					  //$this->corefunctions->sendmail( ADMINEMAIL,TOMAIL,'Customer Inquiry', $msg );
+					  $this->corefunctions->sendmail( ADMINEMAIL,TOMAIL,'Customer Inquiry', $msg );
 					  //$this->corefunctions->sendmail( ADMINEMAIL,'keerthi@consult-ic.com','Customer Inquiry', $msg );
 					  
 					  
-					  $result = $this->email
-    ->from(ADMINEMAIL)
-    ->to(TOMAIL)
-    ->subject('Customer Inquiry')
-    ->message($msg)
-    ->send();
+	// 				  $result = $this->email
+    // ->from(ADMINEMAIL)
+    // ->to(TOMAIL)
+    // ->subject('Customer Inquiry')
+    // ->message($msg)
+    // ->send();
 					  
 					  
 					  
@@ -440,8 +441,8 @@
 		
 		  $headerdata['activeclass']	  = "contact";
           $headerdata['title']	          = "Contact Us: Lessner Plumbing : Licensed  & Insured Plumbing Services | Baltimore Metro Area | 410-746-8415"; 		  
-	      $headerdata['keywords']	      = "Lessner Services, Glyndon, MD, 410¬-746-8415"; 
-	      $headerdata['description']	  = "Thank you for visiting our website. Please fill out the following form to request information about our services or to provide feedback about our site.Lessner Services, PO Box 272, Glyndon, MD 21071-0272, 410¬-746-8415";		  
+	      $headerdata['keywords']	      = "Lessner Services, Glyndon, MD, 410ï¿½-746-8415"; 
+	      $headerdata['description']	  = "Thank you for visiting our website. Please fill out the following form to request information about our services or to provide feedback about our site.Lessner Services, PO Box 272, Glyndon, MD 21071-0272, 410ï¿½-746-8415";		  
 		  		  
           $this->load->view( 'frontend/header',$headerdata);		  
           $this->load->view( 'frontend/contact',$data);
@@ -472,7 +473,7 @@
 	  public function polybutylenepipe() {
           $headerdata['title']	          = "Polybutylene Pipe Replacement: Lessner Plumbing : Licensed  & Insured Plumbing Services | Baltimore Metro Area | 410-746-8415"; 		  
 	      $headerdata['keywords']	      = "Water service, poly pipe, interior, construction, Baltimore, corporation, temperature, replacement, protects, sale, emergency, projects warrantee, materials, labor"; 
-	      $headerdata['description']	  = "Polybutylene pipe is also known as “water service pipe”, “yard service pipe” or “poly pipe”. It is installed underground and delivers public drinking water from the street into your home. Polybutylene pipe is commonly used in and around homes the Baltimore metro area.Our polybutylene pipe replacements come with a 10 year warranty on materials and labor.";		  
+	      $headerdata['description']	  = "Polybutylene pipe is also known as ï¿½water service pipeï¿½, ï¿½yard service pipeï¿½ or ï¿½poly pipeï¿½. It is installed underground and delivers public drinking water from the street into your home. Polybutylene pipe is commonly used in and around homes the Baltimore metro area.Our polybutylene pipe replacements come with a 10 year warranty on materials and labor.";		  
           
 		  $this->load->view( 'frontend/header',$headerdata);		  
           $this->load->view( 'frontend/polybutylenepipe');

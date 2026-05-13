@@ -26,6 +26,7 @@
  * @author		ExpressionEngine Dev Team
  * @link		http://codeigniter.com/user_guide/libraries/output.html
  */
+#[\AllowDynamicProperties]
 class CI_Output {
 
 	/**
@@ -363,8 +364,8 @@ class CI_Output {
 		{
 			$memory	 = ( ! function_exists('memory_get_usage')) ? '0' : round(memory_get_usage()/1024/1024, 2).'MB';
 
-			$output = str_replace('{elapsed_time}', $elapsed, $output);
-			$output = str_replace('{memory_usage}', $memory, $output);
+			$output = str_replace('{elapsed_time}', $elapsed, (string) $output);
+			$output = str_replace('{memory_usage}', $memory, (string) $output);
 		}
 
 		// --------------------------------------------------------------------

@@ -21,7 +21,7 @@
                 email: {
                     required: true,
                     email: true,
-                    remote: "<? echo base_url().'admin/admin/checkemailexists'; ?>"
+                    remote: "<?php  echo base_url().'admin/admin/checkemailexists'; ?>"
                 }
 
 
@@ -54,6 +54,12 @@
 
                 error.insertAfter(element);
 
+            },
+            submitHandler: function (form) {
+                var $btn = $(form).find('button[type="submit"]');
+                if ($btn.data('submitting')) { return false; }
+                $btn.data('submitting', true).prop('disabled', true).text('Saving...');
+                form.submit();
             }
 
         });

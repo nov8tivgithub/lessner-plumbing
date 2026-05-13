@@ -27,7 +27,7 @@
 				 email: {
                     required: true,
                     email: true,
-                    remote: "<? echo base_url().'admin/admin/checkeligible'; ?>"
+                    remote: "<?php  echo base_url().'admin/admin/checkeligible'; ?>"
                 },			
 				
 				captcha_code:'required'
@@ -83,7 +83,7 @@
                 <div class="chdac">
                     <span id="recaptcha_image" class="cappic"><img id="captcha" src="<?php echo base_url();?>assets/securimage/securimage_show.php?sid=<?php echo md5(time()) ?>" alt="CAPTCHA Image" width="220" height="43" /> </span> 
 					
-						 <p class="capcht">Please enter the text in the same order as shown in the Image above. </p>
+						 <p class="capcht">Please enter the text in the same order as shown in the Image above.</p>
 						 
 					<div class="clear"></div>
 					</div>
@@ -105,7 +105,7 @@
                 <input type="submit" class="btn btn-default btn-lg btn-block cus-log-in" value="Recover" />
                 </div>
                 <div class="row align-center forgotfix">
-                <a href="<? echo base_url().ADMIN; ?>">Back to Login</a></div>
+                <a href="<?php  echo base_url().ADMIN; ?>">Back to Login</a></div>
             </div>
             
             

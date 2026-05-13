@@ -26,6 +26,7 @@
  * @category	Libraries
  * @link		http://codeigniter.com/user_guide/general/routing.html
  */
+#[\AllowDynamicProperties]
 class CI_Router {
 
 	/**
@@ -77,6 +78,13 @@ class CI_Router {
 	 * @access public
 	 */
 	var $default_controller;
+	/**
+	 * URI class
+	 *
+	 * @var object
+	 * @access public
+	 */
+	var $uri;
 
 	/**
 	 * Constructor

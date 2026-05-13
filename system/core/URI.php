@@ -26,6 +26,7 @@
  * @author		ExpressionEngine Dev Team
  * @link		http://codeigniter.com/user_guide/libraries/uri.html
  */
+#[\AllowDynamicProperties]
 class CI_URI {
 
 	/**
@@ -57,6 +58,13 @@ class CI_URI {
 	 * @access public
 	 */
 	var $rsegments		= array();
+	/**
+	 * Config class
+	 *
+	 * @var object
+	 * @access public
+	 */
+	var $config;
 
 	/**
 	 * Constructor

@@ -1,7 +1,7 @@
-<link rel="stylesheet" media="screen" type="text/css" href="<? echo base_url(); ?>styles/colorbox.css" /> 
+<link rel="stylesheet" media="screen" type="text/css" href="<?php  echo base_url(); ?>styles/colorbox.css" /> 
 
-<script src="<? echo base_url();?>scripts/ckeditor/ckeditor.js"></script> 
-<script src="<? echo base_url(); ?>scripts/jquery.colorbox.js"></script>
+<script src="<?php  echo base_url();?>scripts/ckeditor/ckeditor.js"></script> 
+<script src="<?php  echo base_url(); ?>scripts/jquery.colorbox.js"></script>
 <script language="javascript">
   $(document).ready(function () {
 
@@ -43,8 +43,14 @@
 			  }else {
 				error.insertAfter(element);
 		  	  }
+			},
+			submitHandler: function (form) {
+				var $btn = $(form).find('button[type="submit"]');
+				if ($btn.data('submitting')) { return false; }
+				$btn.data('submitting', true).prop('disabled', true).text('Submitting...');
+				form.submit();
 			}
-            
+
         });
 		
     });
@@ -215,23 +221,23 @@ function removetag(idd){
 
 
 
-<? if(!empty($tags)): ?>
+<?php  if(!empty($tags)): ?>
 <div class="col-sm-6">
         <div class="form-group">
            <label for="exampleInputEmail1">Tags</label>
            <div class="nmtag">
                <!--<input type="text" class="form-control" id="tag"  name="tag" value=""  maxlength ="40" style="width:250px;">
                <a onclick="addTag()" class="glyphicon glyphicon-plus addtag" title="Add Tag"></a>-->
-				<?foreach($tags as $tk => $tval){?>
-					<input type="checkbox" name="tags[]" value="<? echo $tval['tagid'];?>"> <? echo $tval['tagname'];?>
-				<?}?>
+				<?php foreach($tags as $tk => $tval){?>
+					<input type="checkbox" name="tags[]" value="<?php  echo $tval['tagid'];?>"> <?php  echo $tval['tagname'];?>
+				<?php }?>
 
            </div>
                       <div id="taglist">
            
            </div>
           </div> 
-    </div> <? endif; ?>
+    </div> <?php  endif; ?>
 </div>
 </div>
 <input type="hidden" name="addpost" value="1">

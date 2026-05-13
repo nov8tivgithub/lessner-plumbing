@@ -267,10 +267,10 @@
               return false;
           }
       }
-      public function sendmail( $from, $to, $subject, $message ) {
+      public function sendmail( $from, $to, $subject, $message, $fromName = INDEXTITLE ) {
           $headers = "MIME-Version: 1.0" . "\r\n";
           $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-          $headers .= 'From: <' . $from . '>' . "\r\n";
+          $headers .= 'From: "' . $fromName . '" <' . $from . '>' . "\r\n";
           //$headers .= 'Cc: myboss@example.com' . "\r\n";
           mail( $to, $subject, $message, $headers );
       }
@@ -384,7 +384,7 @@
           curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true );
           $response = curl_exec( $ch );
           if ( $response ) {
-              $data       = strstr( $response, '<?' );
+              $data       = strstr( $response, '<?php ' );
               // echo '<!-- '. $data. ' -->'; // Uncomment to show XML in comments
               $xml_parser = xml_parser_create();
               xml_parse_into_struct( $xml_parser, $data, $vals, $index );
@@ -470,7 +470,7 @@
           curl_setopt( $ch, CURLOPT_HTTPGET, true );
           curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true );
           $response   = curl_exec( $ch );
-          $data       = strstr( $response, '<?' );
+          $data       = strstr( $response, '<?php ' );
           // echo '<!-- '. $data. ' -->'; // Uncomment to show XML in comments
           $xml_parser = xml_parser_create();
           xml_parse_into_struct( $xml_parser, $data, $vals, $index );

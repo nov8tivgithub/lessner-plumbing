@@ -888,6 +888,9 @@ select:-moz-focusring {
 .hfrw textarea{
 	width:97%;
 	height:100px;
+	min-height:100px;
+	max-height:300px;
+	resize:vertical;
 	background:#efefef;
 	border:none;
 	font-family:'Raleway';

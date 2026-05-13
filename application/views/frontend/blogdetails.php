@@ -16,9 +16,9 @@
     <div id="bloglist">
     	<div class="w970 abt_box text-center">
             <h3 class="greshblu MB10 fadeInRight wow">Blog Details</h3>
-                	<p class="blogdate fadeInLeft wow"><?echo date("M", $blogdat['createdate'])." ";  echo date("d", $blogdat['createdate']).","." ";  echo date("Y", $blogdat['createdate']); ?></p>
-                    <a href="<? echo base_url($from); ?>" class="backonestep fadeInRight wow">Back</a>
-                    <div class="shardeta"><a class="st_sharethis_custom share_away" st_url="<? echo base_url('blogdetails/'.$blogdat['postkey']); ?>" st_image="<? echo $blogdat['image']; ?>" st_title="<? echo $blogdat['title']; ?>">Share</a></div>
+                	<p class="blogdate fadeInLeft wow"><?php echo date("M", $blogdat['createdate'])." ";  echo date("d", $blogdat['createdate']).","." ";  echo date("Y", $blogdat['createdate']); ?></p>
+                    <a href="<?php  echo base_url($from); ?>" class="backonestep fadeInRight wow">Back</a>
+                    <div class="shardeta"><a class="st_sharethis_custom share_away" st_url="<?php  echo base_url('blogdetails/'.$blogdat['postkey']); ?>" st_image="<?php  echo $blogdat['image']; ?>" st_title="<?php  echo $blogdat['title']; ?>">Share</a></div>
                     <div class="clear"></div>
                 <div class="blogmain fadeInDown wow">
                 <a href="" class="bloghed greshblu"><?php echo $blogdat['title'];?></a>
@@ -29,10 +29,10 @@
                     <div class="clear"></div>
                     </div>
                     <div class="tagbx fadeInUp wow">
-					<? if (!empty($tagname)): ?>
-					<? foreach($tagname as $cv=>$cm): ?>
-                    	<a class="tags" href="<? echo base_url('blog/'."all".'-'."all".'/'.$cm['tagid']); ?>" ><? echo $cm['tagname']; ?></a> 
-					<? endforeach;
+					<?php  if (!empty($tagname)): ?>
+					<?php  foreach($tagname as $cv=>$cm): ?>
+                    	<a class="tags" href="<?php  echo base_url('blog/'."all".'-'."all".'/'.$cm['tagid']); ?>" ><?php  echo $cm['tagname']; ?></a> 
+					<?php  endforeach;
 						endif;
 					?>
                     </div>
@@ -41,7 +41,7 @@
 					
 					
                     <div class="blogdt_commentbx">
-					<div id="C" class="fb-comments" data-href="<? echo base_url('blogdetails/'.$blogdat['postkey']); ?>" data-num-posts="2" data-width="100%"> </div>
+					<div id="C" class="fb-comments" data-href="<?php  echo base_url('blogdetails/'.$blogdat['postkey']); ?>" data-num-posts="2" data-width="100%"> </div>
 	
 					<div class="clear"></div>
 					</div>

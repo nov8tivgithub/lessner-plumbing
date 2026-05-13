@@ -86,7 +86,7 @@
                         <input type="submit" class="btn btn-default btn-lg btn-block cus-log-in" value="Reset" />
                     </div>
                 </div>
-               <div class="row align-center forgotfix"> <a href="<? echo base_url().ADMIN; ?>" class="btn-link">Back to Login</a></div></div>
+               <div class="row align-center forgotfix"> <a href="<?php  echo base_url().ADMIN; ?>" class="btn-link">Back to Login</a></div></div>
             </div>
             
             </form>
